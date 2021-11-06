@@ -7,6 +7,6 @@ on:
 
 jobs:
   esbuild:
-    - uses: ./github/workflows/workflow-build
+    - uses: ./.github/workflows/workflow-build.yml
       with:
         file: src/www.voicetube.com.ts
