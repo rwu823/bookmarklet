@@ -1,0 +1,5 @@
+.closed-captions { display: none !important; }
+
+.video-subtitles .captions {
+  display: none;
+}

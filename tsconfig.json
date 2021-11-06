@@ -1,0 +1,14 @@
+{
+  "extends": "@ts-mono/base/tsconfig",
+  "exclude": [
+    "node_modules",
+    "out/**/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ],
+  "include": ["packages", "@types", "src"],
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "out"
+  }
+}

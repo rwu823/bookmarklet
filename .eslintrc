@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": [
+    "@ts-mono"
+  ],
+  "rules": {
+    "import/newline-after-import": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "name": "bookmarklet",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rwu823/bookmarklet.git",
+  "author": "rocky <rocky@17.media>",
+  "license": "MIT",
+  "devDependencies": {
+    "@ts-mono/base": "rwu823/ts-mono#pkg/ts-base"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,mjs}": [
+      "eslint --fix",
+      "stylelint --fix"
+    ]
+  },
+  "scripts": {
+    "test:ci": "jest --ci --no-cache --bail --changedSince=origin/main --maxWorkers=4",
+    "rm-pkg": "rm -rf node_modules packages/*/node_modules yarn.lock",
+    "transcrypt": "curl -s https://raw.githubusercontent.com/elasticdog/transcrypt/master/transcrypt | bash -s --",
+    "lint": "eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.mjs",
+    "prepare": "husky install & browserslist --update-db",
+    "build": "esbuild --minify --bundle --outdir=out --loader:.css=text"
+  },
+  "dependencies": {
+    "esbuild": "0.13.12"
+  }
+}
