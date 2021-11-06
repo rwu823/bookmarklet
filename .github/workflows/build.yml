@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  esbuild:
+  voicetube:
     uses: $GITHUB_REPOSITORY/.github/workflows/workflow-build.yml@main
     with:
       file: src/www.voicetube.com.ts
