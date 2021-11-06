@@ -1,0 +1,25 @@
+name: build
+
+on:
+  workflow_call:
+    inputs:
+      file:
+        description: building file path.
+        default: ''
+        required: true
+        type: string
+    secrets:
+      token:
+        required: false
+
+jobs:
+  esbuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache-dependency-path: yarn.lock
+      - run: yarn install
+      - run: yarn build ${{ inputs.file }
