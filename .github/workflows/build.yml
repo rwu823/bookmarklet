@@ -6,18 +6,10 @@ on:
       - main
 
 jobs:
-  voicetube:
+  src:
     uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
     with:
-      file: src/www.voicetube.com.ts
-
-  others:
-    uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
-    with:
-      file: src/testing.ts
-
-  publish:
-    needs: [voicetube, others]
-    runs-on: ubuntu-latest
+      file: src/www.voicetube.com.ts src/testing.ts
     steps:
-      - run: du -sh out/**
+      - run: |
+          du -sh out/**

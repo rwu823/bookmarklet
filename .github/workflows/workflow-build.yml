@@ -3,14 +3,11 @@ name: build workflow
 on:
   workflow_call:
     inputs:
-      file:
+      files:
         description: building file path.
         default: ''
         required: true
         type: string
-    secrets:
-      token:
-        required: false
 
 jobs:
   build:
@@ -22,4 +19,4 @@ jobs:
           node-version: 16
           cache-dependency-path: yarn.lock
       - run: yarn install
-      - run: yarn build ${{ inputs.file }}
+      - run: yarn build ${{ inputs.files }}
