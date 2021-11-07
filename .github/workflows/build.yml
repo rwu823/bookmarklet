@@ -9,4 +9,4 @@ jobs:
   src:
     uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
     with:
-      file: src/www.voicetube.com.ts src/testing.ts
+      files: src/www.voicetube.com.ts src/testing.ts
