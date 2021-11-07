@@ -7,6 +7,6 @@ on:
 
 jobs:
   voicetube:
-    uses: $GITHUB_REPOSITORY/.github/workflows/workflow-build.yml@main
+    uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
     with:
       file: src/www.voicetube.com.ts
