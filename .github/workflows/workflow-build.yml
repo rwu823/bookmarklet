@@ -10,7 +10,7 @@ on:
         type: string
 
 jobs:
-  build:
+  esbuild:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,3 +20,9 @@ jobs:
           cache-dependency-path: yarn.lock
       - run: yarn install
       - run: yarn build ${{ inputs.files }}
+      - run: |
+          cd out
+          git init
+          git add .
+          git commit -m update
+          git push -f origin HEAD:gh-pages
