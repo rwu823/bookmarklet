@@ -7,9 +7,9 @@ on:
 
 jobs:
   src:
-    uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
-    with:
-      file: src/www.voicetube.com.ts src/testing.ts
     steps:
+      - uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
+        with:
+          file: src/www.voicetube.com.ts src/testing.ts
       - run: |
           du -sh out/**
