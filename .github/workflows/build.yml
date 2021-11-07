@@ -10,3 +10,8 @@ jobs:
     uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
     with:
       file: src/www.voicetube.com.ts
+
+  other:
+    uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
+    with:
+      file: src/testing.ts
