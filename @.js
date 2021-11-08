@@ -1,0 +1,1 @@
+(()=>{var e="https://cdn.jsdelivr.net/gh/rwu823/bookmarklet@out";var c=s=>{let r=document,t=r.createElement("script");return t.src=s,t.async=!0,t.defer=!0,r.head.append(t),t};(()=>{c(`${e}/main.js`)})();})();

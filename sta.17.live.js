@@ -1,0 +1,1 @@
+(()=>{var s="17LIVE/KEY_DEV_BACKEND_SERVER";(()=>{let t=JSON.parse(sessionStorage.getItem(s)??"{}").name==="prod";sessionStorage.setItem(s,JSON.stringify({name:"prod",url:"https://api-dsa.17app.co/",type:1,...t?{name:"stag",url:"https://sta-api.17app.co/"}:{}})),sessionStorage.setItem("17LIVE/KEY_DEV_IS_ENABLED","true"),location.reload()})();})();

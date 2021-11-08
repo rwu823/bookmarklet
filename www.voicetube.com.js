@@ -1,4 +1,4 @@
-(()=>{var o=n=>{let e=document,t=e.createElement("style");t.textContent=n,e.head.append(t)};var c=`.closed-captions { display: none !important; }
+(()=>{var o=n=>{let e=document,t=e.createElement("style");return t.textContent=n,e.head.append(t),t};var c=`.closed-captions { display: none !important; }
 
 .video-subtitles .captions {
   display: none;
