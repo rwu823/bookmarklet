@@ -24,7 +24,7 @@
     "transcrypt": "curl -s https://raw.githubusercontent.com/elasticdog/transcrypt/master/transcrypt | bash -s --",
     "lint": "eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.mjs",
     "prepare": "husky install & browserslist --update-db",
-    "build": "esbuild --minify --bundle --outdir=out --loader:.css=text"
+    "build": "ts-node -T scripts/build"
   },
   "dependencies": {
     "esbuild": "0.13.12"

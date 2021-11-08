@@ -6,7 +6,22 @@ on:
       - main
 
 jobs:
-  src:
-    uses: rwu823/bookmarklet/.github/workflows/workflow-build.yml@main
-    with:
-      files: src/www.voicetube.com.ts
+  build-src:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          cache: yarn
+          cache-dependency-path: yarn.lock
+      - run: yarn install
+      - run: yarn build
+      - run: du -sh out/*
+      - name: Deploy to gh-pages
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: out
+          FOLDER: out
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

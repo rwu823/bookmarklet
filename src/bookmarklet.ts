@@ -1,13 +1,16 @@
+/* eslint-disable no-restricted-globals */
+
 ;(() => {
-  const script = document.createElement('script')
-  const { host } = window.location
+  const d = document
+  const script = d.createElement('script')
+  const { host } = location
   script.src = `https://cdn.jsdelivr.net/gh/rwu823/bookmarklet@out/${host}.js`
   script.async = true
   script.defer = true
 
   script.addEventListener('error', () => {
-    alert(`load script ${host} error`)
+    alert(`Load script error: \`${host}\``)
   })
 
-  document.head.append(script)
+  d.head.append(script)
 })()
