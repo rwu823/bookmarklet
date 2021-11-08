@@ -4,4 +4,6 @@ export const createStyle = (cssText: string) => {
   style.textContent = cssText
 
   d.head.append(style)
+
+  return style
 }

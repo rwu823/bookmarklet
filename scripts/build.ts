@@ -3,13 +3,13 @@ import { createWriteStream } from 'fs'
 import { readdir, readFile } from 'fs/promises'
 import path from 'path'
 
-const SOURCE = 'src'
+const SRC = 'src'
 const OUT_DIR = 'out'
 
 ;(async () => {
-  const tsFiles = await (await readdir(SOURCE))
-    .filter((file) => /tsx?$/.test(file) && file !== 'bookmarklet.ts')
-    .map((file) => path.join(SOURCE, file))
+  const tsFiles = await (await readdir(SRC))
+    .filter((file) => /tsx?$/.test(file))
+    .map((file) => path.join(SRC, file))
 
   const buildResult = await esbuild.build({
     entryPoints: tsFiles,
@@ -25,17 +25,10 @@ const OUT_DIR = 'out'
 
   console.info(buildResult)
 
-  const bookmarkletTs = await (
-    await readFile(`${SOURCE}/bookmarklet.ts`)
-  ).toString()
-
-  const { code: bookmarkletJs } = await esbuild.transform(bookmarkletTs, {
-    loader: 'ts',
-    minify: true,
-  })
+  const bookmarklet = await (await readFile(`${OUT_DIR}/@.js`)).toString()
 
   const ws = createWriteStream('out/@')
 
-  ws.write(`javascript:${bookmarkletJs}`)
+  ws.write(`javascript:${bookmarklet}`)
   ws.end()
 })()
