@@ -1,0 +1,1 @@
+javascript:(()=>{const e=document,t=e.createElement("script"),{host:r}=location;t.src=`https://cdn.jsdelivr.net/gh/rwu823/bookmarklet@out/${r}.js`,t.async=!0,t.defer=!0,t.addEventListener("error",()=>{alert(`Load script error: \`${r}\``)}),e.head.append(t)})();
