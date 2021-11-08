@@ -9,7 +9,7 @@ jobs:
   build-src:
     runs-on: ubuntu-latest
     steps:
-      - uses: rwu823/actions@main/packages/node-yarn-init
+      - uses: rwu823/actions@node-yarn-init
       - run: yarn build
       - run: du -sh out/*
       - name: Deploy to gh-pages
