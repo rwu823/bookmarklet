@@ -1,1 +1,0 @@
-(()=>{var c="https://cdn.jsdelivr.net/gh/rwu823/bookmarklet@out";var o=r=>{let e=document,t=e.createElement("script");return t.src=r,t.async=!0,t.defer=!0,e.head.append(t),t};(()=>{let{host:r}=location;o(`${c}/${r}.js`).addEventListener("error",()=>{alert(`Load script error: \`${r}\``)})})();})();
